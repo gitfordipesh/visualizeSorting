@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble-Sort</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="brand">
+            <h3>
+                <a href="/index.html" class="nav-branding">Sorting Visualizer</a>
+            </h3>
+        </div>
+    </header>
+    <div class="side-menu">
+        <div class="heading">
+            <div class="head-bars">
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="brand">
+                <h3>Available Sort</h3>
+            </div>
+        </div>
+        <hr>
+        <ul class="nav-menu">
+            <p>Logarithmic</p>
+            <li class="nav-item">
+                <a href="/html/merge.html" class="nav-link">Merge Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/heap.html" class="nav-link">Heap Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/quick.html" class="nav-link">Quick Sort</a>
+            </li>
+            <p>Quadratic</p>
+            <li class="nav-item">
+                <a href="/html/bubble.html" class="nav-link">Bubble Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/insertion.html" class="nav-link">Insertion Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/selection.html" class="nav-link">Selection Sort</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content-body">
+        <div class="array-section">
+            <h3>Bubble sort</h3>
+            <div class="cont">
+                <div class="array-inputs">
+                    <p>Size of the array:</p>
+                    <input id="a_size" type="range" min=20 max=150 step=1 value=80>
+                    <p>Speed of the algorithm:</p>
+                    <input id="a_speed" type="range" min=1 max=5 step=1 value=4>
+                    <button id="a_generate">Generate New Array!</button>
+                    <div class="algos">
+                        <button onclick="bubbleFunction()">Bubble Sort</button>
+                    </div> 
+                </div>
+                <div id="array_container">
+        
+                </div>
+            </div>
+        </div>
+        <div class="desc-section">
+            <div class="desc content1">
+                <h3 class="cont-heading">Description</h3>
+                <br>
+                <p>Bubble Sort is an iterative sorting algorithm that imitates the movement of bubbles in sparkling
+                    water. The bubbles represents the elements of the data structure. <br><br>
+                    The bigger bubbles reach the top faster than smaller bubbles, and this algorithm works in the same way. It iterates through the data structure and for each cycle compares the current element with the
+                    next one, swapping them if they are in the wrong order. <br><br>
+                    It's a simple algorithm to implement, but not much efficient: on average, quadratic sorting
+                    algorithms with the same time complexity such as Selection Sort or Insertion Sort perform better.
+                    <br>
+                    It has several variants to improve its performances, such as Shaker Sort, Odd Even Sort and Comb
+                    Sort.
+                    <br>
+                    <br>
+                </p>
+            </div>
+            <div class="comp content1">
+                <h3 class="cont-heading">Complexity</h3>
+                <div class="array-inputs2">
+                    <p>Best Case</p>
+                    <p id="best"></p>
+                    <p>Worst Case</p>
+                    <p id="worst"></p>
+                    <p>Average Case</p>                
+                    <p id="avg"></p>                    
+                    <p>Space</p>
+                    <p>O(1)</p>
+                </div>
+            </div>
+        </div>
+        <div class="implementation">
+            <h3 class="cont-heading">Implementation</h3>
+            <br><br>
+            <div class="imp">
+                    <div class="c-code">
+                        <img src="/images/c_icon.png" alt="c-icon">
+                        <pre>
+    void bubble_sort(long arr[], long n) {
+        long c, d, t;
+                              
+        for (c = 0 ; c < n - 1; c++) {
+            for (d = 0 ; d < n - c - 1; d++) {
+                if (arr[d] > arr[d+1]) {
+                    t = arr[d];
+                    arr[d] = arr[d+1];
+                    arr[d+1] = t;
+                }
+            }
+        }
+    }  
+                        </pre>
+                </div>
+                <div class="java-code">
+                    <img src="/images/java_icon.png" alt="java-icon">
+                    <pre>
+    static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        int temp = 0;
+        for(int i=0; i < n; i++){
+            for(int j=1; j < (n-i); j++){
+                if(arr[j-1] > arr[j]){
+                    temp = arr[j-1];
+                    arr[j-1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+                    </pre>
+                </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="footer-inputs">
+            <p class="table-head">Sorting Visualizer</p>
+            <p class="table-head">Contacts</p>
+            <p class="table-head">References</p>
+            <p>Dipesh Gupta</p>
+            <p>emailfordipesh@gmail.com</p>
+            <p>Github</p>
+            <p>Harsh Mishra</p>
+            <p>harsh.mishra45@gmail.com</p>
+            <p>Wikipedia</p>
+            <p>Aman Bajpai</p>
+            <p>aman.bajpai75@gmail.com</p>
+            <p>Google</p>
+            <p>Abhishek Kumar</p>
+            <p>abhishek.kumar67@gmail.com</p>
+        </div>
+        <div class="copy">
+            <p>&copy <b>Sorting Visualizer</b> Design</p>
+        </div>
+    </footer>
+</body>
+<script src="/script.js"></script>
+
+<script src="/script/main.js"></script>
+<!--This should be at the end of body and should be loaded before sorts.js-->
+<script src="/script/visualizations.js"></script>  <!--This should be loaded after main.js-->
+<script src="/script/bubble_sort.js"></script>
+</html>

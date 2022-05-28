@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bubble-Sort</title>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/responsive.css">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    
+<body>
+    <header>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="brand">
+            <h3>
+                <a href="/index.html" class="nav-branding">Sorting Visualizer</a>
+            </h3>
+        </div>
+    </header>
+    <div class="side-menu">
+        <div class="heading">
+            <div class="head-bars">
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="brand">
+                <h3>Available Sort</h3>
+            </div>
+        </div>
+        <hr>
+        <ul class="nav-menu">
+            <p>Logarithmic</p>
+            <li class="nav-item">
+                <a href="/html/merge.html" class="nav-link">Merge Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/heap.html" class="nav-link">Heap Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/quick.html" class="nav-link">Quick Sort</a>
+            </li>
+            <p>Quadratic</p>
+            <li class="nav-item">
+                <a href="/html/bubble.html" class="nav-link">Bubble Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/insertion.html" class="nav-link">Insertion Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/selection.html" class="nav-link">Selection Sort</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content-body">
+        <div class="array-section">
+            <h3>Merge sort</h3>
+            <div class="cont">
+                <div class="array-inputs">
+                    <p>Size of the array:</p>
+                    <input id="a_size" type="range" min=20 max=150 step=1 value=80>
+                    <p>Speed of the algorithm:</p>
+                    <input id="a_speed" type="range" min=1 max=5 step=1 value=4>
+                    <button id="a_generate">Generate New Array!</button>
+                    <div class="algos">
+                        <button onclick="mergeFunction()">Merge Sort</button>
+                    </div> 
+                </div>
+                <div id="array_container">
+        
+                </div>
+            </div>
+        </div>
+        <div class="desc-section">
+            <div class="desc content1">
+                <h3 class="cont-heading">Description</h3>
+                <br>
+                <p>Merge Sort is a sorting algorithm based on the Divide et Impera technique, like Quick Sort. It can be implemented iteratively or recursively, using the Top-Down and Bottom-Up algorithms respectively. We represented the first one.
+                    <br><br>
+                    The algorithm divides the data structure recursively until the subsequences contain only one element. At this point, the subsequences get merged and ordered sequentially. To do so, the algorithm progressively builds the sorted sublist by adding each time the minimum element of the next two unsorted subsequences until there is only one sublist remaining. This will be the sorted data structure.
+                    <br>
+                    <br>
+                </p>
+            </div>
+            <div class="comp content1">
+                <h3 class="cont-heading">Complexity</h3>
+                <div class="array-inputs2">
+                    <p>Best Case</p>
+                    <p id="best"></p>
+                    <p>Worst Case</p>
+                    <p id="worst"></p>
+                    <p>Average Case</p>
+                    <p id="avg"></p>                    
+                    <p>Space</p>
+                    <p>O(n)</p>
+                </div>
+            </div>
+        </div>
+        <div class="implementation">
+            <h3 class="cont-heading">Implementation</h3>
+            <br><br>
+            <div class="imp">
+                    <div class="c-code">
+                        <img src="/images/c_icon.png" alt="c-icon">
+                        <pre>
+void merge(int arr[], int l, int m, int r)
+{
+    int i, j, k;
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    int L[n1], R[n2];
+
+    for (i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for (j = 0; j < n2; j++)
+        R[j] = arr[m + 1 + j];
+
+    i = 0;
+    j = 0;
+    k = l;
+
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSort(int arr[], int l, int r)
+{
+    if (l < r) {
+        int m = l + (r - l) / 2;
+
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + 1, r);
+        merge(arr, l, m, r);
+    }
+}
+
+                        </pre>
+                </div>
+                <div class="java-code">
+                    <img src="/images/java_icon.png" alt="java-icon">
+                    <pre>
+void merge(int arr[], int l, int m, int r)
+{
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    int L[] = new int[n1];
+    int R[] = new int[n2];
+
+    for (int i = 0; i < n1; ++i)
+        L[i] = arr[l + i];
+    for (int j = 0; j < n2; ++j)
+        R[j] = arr[m + 1 + j];
+
+    int i = 0, j = 0;
+
+    int k = l;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+void sort(int arr[], int l, int r)
+{
+    if (l < r) {
+        int m =l+ (r-l)/2;
+
+        sort(arr, l, m);
+        sort(arr, m + 1, r);
+
+        merge(arr, l, m, r);
+    }
+}
+
+                    </pre>
+                </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="footer-inputs">
+            <p class="table-head">Sorting Visualizer</p>
+            <p class="table-head">Contacts</p>
+            <p class="table-head">References</p>
+            <p>Dipesh Gupta</p>
+            <p>emailfordipesh@gmail.com</p>
+            <p>Github</p>            
+            <p>Harsh Mishra</p>
+            <p>harsh.mishra45@gmail.com</p>
+            <p>Wikipedia</p>            
+            <p>Aman Bajpai</p>
+            <p>aman.bajpai75@gmail.com</p>
+            <p>Google</p>            
+            <p>Abhishek Kumar</p>
+            <p>abhishek.kumar67@gmail.com</p>
+        </div>
+        <div class="copy">
+            <p>&copy <b>Sorting Visualizer</b> Design</p>
+        </div>
+    </footer>
+</body>
+<script src="/script.js"></script>
+
+<script src="/script/main.js"></script>
+<!--This should be at the end of body and should be loaded before sorts.js-->
+<script src="/script/visualizations.js"></script>  <!--This should be loaded after main.js-->
+<script src="/script/merge_sort.js"></script>
+</html>

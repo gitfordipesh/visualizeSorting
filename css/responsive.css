@@ -1,0 +1,17 @@
+@media(max-width:768px) {
+    .content {
+        padding: 65px;
+    }
+
+    .footer-inputs {
+        width: 100%;
+    }
+    .desc-section {
+        grid-template-columns: 100%;
+    }
+    .imp{
+        display: flex;
+        flex-direction: column;
+        gap: 3vw;
+    }
+}

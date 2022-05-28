@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/images/bgimage.avif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+header {
+    display: flex;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1),
+        inset 0 0 1px rgba(255, 255, 255, 0.6);
+    color: #46d6ee;
+    padding: 10px 30px;
+    font-size: 3vw;
+    line-height: 2em;
+    text-transform: uppercase;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+header.active {
+    background-color: black;
+}
+
+li {
+    list-style-type: circle;
+    color: white;
+    font-size: 3vw;
+}
+.categories-sort li {
+    list-style-type: circle;
+    color: white;
+    font-size: 2vw;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.brand {
+    margin: auto;
+}
+
+.nav-branding {
+    padding: 5px;
+    color: #46d6ee;
+}
+
+.side-menu {
+    position: fixed;
+    left: -100%;
+    flex-direction: column;
+    width: 300px;
+    height: 100vh;
+    text-align: left;
+    transition: 0.3s;
+    background-color: black;
+    z-index: 89;
+}
+
+.white-text {
+    color: white;
+}
+
+.heading {
+    display: flex;
+    padding: 10px 35px;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgb(61, 125, 135);
+    line-height: 1.5em;
+    text-transform: uppercase;
+    justify-content: space-between;
+}
+
+.heading h3 {
+    text-transform: uppercase;
+}
+
+.nav-item {
+    padding: 10px 2px;
+    margin: 0 75px;
+}
+
+.nav-menu p {
+    padding: 16px 40px;
+    font-size: 1.4em;
+    text-transform: capitalize;
+    color: rgb(61, 125, 135);
+    font-weight: 700;
+}
+
+.side-menu.active {
+    left: 0;
+}
+.nav-link{
+    color: whitesmoke;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: rgb(61, 125, 135);
+}
+
+.name-brand {
+    height: 70vh;
+}
+
+.name {
+    width: max-content;
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    transform: translate(-50%, -65%);
+    display: flex;
+    gap: 10px;
+    border-right: 6px solid #46d6ee;
+    padding: 0px 12px;
+}
+
+.name h2 {
+    text-align: end;
+    font-size: 6vw;
+    text-transform: uppercase;
+}
+.content-body{
+    background-color: #297b9b54;;
+}
+.content {
+    background-color: rgba(12, 12, 12, 0.80);
+    padding: 65px 170px;
+    font-size: 2vw;
+}
+.content h3{
+    color: #46d6ee;
+}
+.content1 {
+    background-color: rgba(12, 12, 12, 0.80);
+    padding: 65px;
+    /* font-size: 1.5em; */
+    font-size: 1.7vw;
+    text-align: justify;
+}
+
+.categories-sort {
+    margin-left: 90px;
+}
+footer{
+    background-color: rgb(30, 27, 27);
+    padding-top: 10px;
+}
+.footer-inputs {
+    width: 60%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-row-gap: 10px;
+}
+
+.footer-inputs .table-head {
+    /* font-size: 1.1em; */
+    font-size: 1.4vw;
+    color: #46d6ee;
+    text-transform: uppercase;
+}
+
+.footer-inputs p {
+    font-weight: 100;
+    font-size: 1.3vw;
+    text-align: center;
+}
+.copy {
+    background-color: black;
+    color: white;
+    margin: auto;
+    text-align: center;
+    font-size: 1.6vw;;
+    padding: 14px 0px;
+}
+
+.array-section h3 {
+    font-size: 3.5vw;
+    text-align: center;
+}
+
+.desc-section {
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+.desc{
+    border-right: 2px solid #46d6ee;
+}
+.cont-heading {
+    color: #46d6ee;
+    font-size: 2vw;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+}
+.array-inputs {
+    width: 60%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    place-content: center;
+    color: white;
+    grid-row-gap: 30px;
+  }
+  
+  .array-inputs p{
+    font-weight: 700;
+    font-size: 2.3vw;;
+    text-transform: capitalize;
+  }
+
+  #a_generate{
+    font-size: 2vw;
+    border: 3px solid #46d6ee;
+    border-radius: 25px 0px;
+    background-color: transparent;
+    width: max-content;
+    padding: 8px;
+    color: #46d6ee;
+  }
+  #a_generate:hover{
+    background-color: #46d6ee;
+    color: white;
+    box-shadow: 0px 0px 20px #46d6ee;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+  }
+
+.array-inputs2 {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    place-content: center;
+}
+.cont{
+    width: 100%;
+  }
+#array_container {
+    display: flex;
+    width: 85%;
+    margin: 50px auto;
+    height: 70vh;
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), 
+        inset 0 0 5px rgba(255, 255, 255, 0.6);
+  }
+
+  .algos button {
+    background-color: #46d6ee;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 10px;
+    font-size: 2vw;
+    text-transform: uppercase;
+    border-radius: 25px;
+  }
+  .algos button:hover{
+    box-shadow: 0px 0px 20px #46d6ee;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+  }
+  .algos.butt_locked {
+    background-color: transparent;
+    color: rgb(61, 125, 135);
+    cursor: pointer;
+  }
+  
+   .algos.butt_locked:hover {
+    background-color: transparent;
+    color: rgb(61, 125, 135);
+    cursor: pointer;
+  }
+  
+   .algos.butt_selected {
+    background-color: white;
+    color: #46d6ee
+  }
+  
+   .algos.butt_selected:hover {
+    background-color: #46d6ee;
+    color: white;
+    box-shadow: 0px 0px 20px #46d6ee;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+  }
+  .algos .butt_unselected {
+    background-color: #46d6ee;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 10px;
+    font-size: 2vw;
+    text-transform: uppercase;
+    border-radius: 25px;
+  }
+   .algos .butt_unselected:hover {
+    cursor: pointer;
+  }
+ 
+  .implementation{
+    padding: 100px 50px;
+    background-color: rgba(12, 12, 12, 0.90);
+  }
+
+  .imp{
+    display: flex;
+    justify-content: space-between;
+}
+img{
+    height: 50px;
+}
+.c-code{
+    border: 5px solid #46d6ee;
+    border-radius: 80px 0;
+    padding: 25px;
+    font-size:  1.6vw;
+}
+.java-code{
+    border: 5px solid #46d6ee;
+    border-radius: 80px 0;
+    padding: 25px;
+    font-size:  1.6vw;
+}
+ 

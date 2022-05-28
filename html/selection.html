@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bubble-Sort</title>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/responsive.css">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    
+<body>
+    <header>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="brand">
+            <h3>
+                <a href="/index.html" class="nav-branding">Sorting Visualizer</a>
+            </h3>
+        </div>
+    </header>
+    <div class="side-menu">
+        <div class="heading">
+            <div class="head-bars">
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="brand">
+                <h3>Available Sort</h3>
+            </div>
+        </div>
+        <hr>
+        <ul class="nav-menu">
+            <p>Logarithmic</p>
+            <li class="nav-item">
+                <a href="/html/merge.html" class="nav-link">Merge Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/heap.html" class="nav-link">Heap Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/quick.html" class="nav-link">Quick Sort</a>
+            </li>
+            <p>Quadratic</p>
+            <li class="nav-item">
+                <a href="/html/bubble.html" class="nav-link">Bubble Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/insertion.html" class="nav-link">Insertion Sort</a>
+            </li>
+            <li class="nav-item">
+                <a href="/html/selection.html" class="nav-link">Selection Sort</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content-body">
+        <div class="array-section">
+            <h3>Selection sort</h3>
+            <div class="cont">
+                <div class="array-inputs">
+                    <p>Size of the array:</p>
+                    <input id="a_size" type="range" min=20 max=150 step=1 value=80>
+                    <p>Speed of the algorithm:</p>
+                    <input id="a_speed" type="range" min=1 max=5 step=1 value=4>
+                    <button id="a_generate">Generate New Array!</button>
+                    <div class="algos">
+                        <button onclick="selectionFunction()">Selection Sort</button>
+                    </div> 
+                </div>
+                <div id="array_container">
+        
+                </div>
+            </div>
+
+        </div>
+        <div class="desc-section">
+            <div class="desc content1">
+                <h3 class="cont-heading">Description</h3>
+                <br>
+                <p>Selection Sort is an iterative and in-place sorting algorithm that divides the data structure in two sublists: the ordered one, and the unordered one. The algorithm loops for all the elements of the data structure and for every cycle picks the smallest element of the unordered sublist and adds it to the sorted sublist, progressively filling it.
+<br><br>
+                    It's a really simple and intuitive algorithm that does not require additional memory, but it's not really efficient on big data structures due to its quadratic time complexity.
+                    <br><br>
+                    This algorithm has been upgraded and enhanced in several variants such as Heap Sort.
+                    <br>
+                    <br>
+                </p>
+            </div>
+            <div class="comp content1">
+                <h3 class="cont-heading">Complexity</h3>
+                <div class="array-inputs2">
+                    <p>Best Case</p>
+                    <p id="best"></p>
+                    <p>Worst Case</p>
+                    <p id="worst"></p>
+                    <p>Average Case</p>                
+                    <p id="avg"></p>                    
+                    <p>Space</p>
+                    <p>O(1)</p>
+                </div>
+            </div>
+        </div>
+        <div class="implementation">
+            <h3 class="cont-heading">Implementation</h3>
+            <br><br>
+            <div class="imp">
+                    <div class="c-code">
+                        <img src="/images/c_icon.png" alt="c-icon">
+                        <pre>
+    void swap(int *xp, int *yp)
+    {
+        int temp = *xp;
+        *xp = *yp;
+        *yp = temp;
+    }
+    
+    void selectionSort(int arr[], int n)
+    {
+        int i, j, min_idx;
+                            
+        for (i = 0; i < n-1; i++)
+        {
+            min_idx = i;
+            for (j = i+1; j < n; j++)
+                if (arr[j] < arr[min_idx])
+                min_idx = j;
+                            
+            swap(&arr[min_idx], &arr[i]);
+        }
+    } 
+                        </pre>
+                </div>
+                <div class="java-code">
+                    <img src="/images/java_icon.png" alt="java-icon">
+                    <pre>
+    void selectionSort(int arr[])
+    {
+        int n = arr.length;
+                        
+        for (int i = 0; i < n-1; i++)
+        {
+            int min_idx = i;
+            for (int j = i+1; j < n; j++)
+                if (arr[j] < arr[min_idx])
+                    min_idx = j;
+                        
+            int temp = arr[min_idx];
+            arr[min_idx] = arr[i];
+            arr[i] = temp;
+        }
+    }
+                    </pre>
+                </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="footer-inputs">
+            <p class="table-head">Sorting Visualizer</p>
+            <p class="table-head">Contacts</p>
+            <p class="table-head">References</p>
+            <p>Dipesh Gupta</p>
+            <p>emailfordipesh@gmail.com</p>
+            <p>Github</p>            
+            <p>Harsh Mishra</p>
+            <p>harsh.mishra45@gmail.com</p>
+            <p>Wikipedia</p>            
+            <p>Aman Bajpai</p>
+            <p>aman.bajpai75@gmail.com</p>
+            <p>Google</p>            
+            <p>Abhishek Kumar</p>
+            <p>abhishek.kumar67@gmail.com</p>
+        </div>
+        <div class="copy">
+            <p>&copy <b>Sorting Visualizer</b> Design</p>
+        </div>
+    </footer>
+</body>
+<script src="/script.js"></script>
+
+<script src="/script/main.js"></script>
+<!--This should be at the end of body and should be loaded before sorts.js-->
+<script src="/script/visualizations.js"></script>  <!--This should be loaded after main.js-->
+<script src="/script/selection_sort.js"></script>
+</html>
