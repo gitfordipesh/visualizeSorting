@@ -17,3 +17,7 @@ window.addEventListener("scroll", function () {
       head.style.backgroundColor = "transparent";
     }
   })
+
+let changeIcon = function(icon){
+  icon.classList.toggle('fa-times')
+}
