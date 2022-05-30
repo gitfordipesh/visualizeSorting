@@ -65,61 +65,91 @@ function runalgo()
     this.classList.add("butt_selected");
     switch(this.innerHTML)
     {
-        case "Bubble Sort":Bubble();
+        case "Bubble Sort":
+            var start = window.performance.now();
+            Bubble();
+            var end = performance.now();
+            var timeTaken = end-start;
+            document.getElementById('time').innerHTML = "Sort took "+timeTaken+"ms";
             break;
-        case "Selection Sort":Selection_sort();
+        case "Selection Sort":
+            var start = window.performance.now();
+            Selection_sort();
+            var end = performance.now();
+            var timeTaken = end-start;
+            document.getElementById('time').innerHTML = "Sort took "+timeTaken+"ms";
             break;
-        case "Insertion Sort":Insertion();
+        case "Insertion Sort":
+            var start = window.performance.now();
+            Insertion();
+            var end = performance.now();
+            var timeTaken = end-start;
+            document.getElementById('time').innerHTML = "Sort took "+timeTaken+"ms";
             break;
-        case "Merge Sort":Merge();
+        case "Merge Sort":
+            var start = window.performance.now();
+            Merge();
+            var end = performance.now();
+            var timeTaken = end-start;
+            document.getElementById('time').innerHTML = "Sort took "+timeTaken+"ms";
             break;
-        case "Quick Sort":Quick();
+        case "Quick Sort":
+            var start = window.performance.now();
+            Quick();
+            var end = performance.now();
+            var timeTaken = end-start;
+            document.getElementById('time').innerHTML = "Sort took "+timeTaken+"ms";
             break;
-        case "Heap Sort":Heap();
+        case "Heap Sort":
+            var start = window.performance.now();
+            Heap();
+            var end = performance.now();
+            var timeTaken = end-start;
+            document.getElementById('time').innerHTML = "Sort took "+timeTaken+"ms";
             break;
     }
 }
 
 function bubbleFunction()
 {
-    document.getElementById("best").innerHTML = "O(n)"
+    document.getElementById("best").innerHTML = "Ω(n)"
     document.getElementById("worst").innerHTML = "O(n^2)"
-    document.getElementById("avg").innerHTML = "O(n^2)"
+    document.getElementById("avg").innerHTML = "θ(n^2)"
 }
 
 function selectionFunction()
 {
-    document.getElementById("best").innerHTML = "O(n)"
+    document.getElementById("best").innerHTML = "Ω(n)"
     document.getElementById("worst").innerHTML = "O(n^2)"
-    document.getElementById("avg").innerHTML = "O(n^2)"
+    document.getElementById("avg").innerHTML = "θ(n^2)"
 }
 
 function insertionFunction()
 {
 
-    document.getElementById("best").innerHTML = "O(n)"
+    document.getElementById("best").innerHTML = "Ω(n)"
     document.getElementById("worst").innerHTML = "O(n^2)"
-    document.getElementById("avg").innerHTML = "O(n^2)"
+    document.getElementById("avg").innerHTML = "θ(n^2)"
 }
 
 function mergeFunction()
 {
-    document.getElementById("best").innerHTML = "O(n*log(n))"
+    document.getElementById("best").innerHTML = "Ω(n*log(n))"
     document.getElementById("worst").innerHTML = "O(n*log(n))"
-    document.getElementById("avg").innerHTML = "O(n*log(n))"
+    document.getElementById("avg").innerHTML = "θ(n*log(n))"
 }
 
 function quickFunction()
 {
-    document.getElementById("best").innerHTML = "O(n*log(n))"
+    document.getElementById("best").innerHTML = "Ω(n*log(n))"
     document.getElementById("worst").innerHTML = "O(n*log(n))"
-    document.getElementById("avg").innerHTML = "O(n^2)"
+    document.getElementById("avg").innerHTML = "θ(n^2)"
 }
 
 function heapFunction()
 {
-    document.getElementById("best").innerHTML = "O(n*log(n))"
+    document.getElementById("best").innerHTML = "Ω(n*log(n))"
     document.getElementById("worst").innerHTML = "O(n*log(n))"
-    document.getElementById("avg").innerHTML = "O(n*log(n))"
+    document.getElementById("avg").innerHTML = "θ(n*log(n))"
 }
 
